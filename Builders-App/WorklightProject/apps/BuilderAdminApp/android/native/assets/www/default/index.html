@@ -1,0 +1,96 @@
+<!DOCTYPE HTML><html>
+    <head>
+        <META http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta charset="UTF-8">
+        <title>index</title>
+        <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0" name="viewport">
+        <link href="worklight/worklight.css" rel="stylesheet">
+        <link href="images/favicon.png" rel="shortcut icon">
+        <link href="images/apple-touch-icon.png" rel="apple-touch-icon">
+        <link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
+        <link href="css/main.css" rel="stylesheet">
+        <script>
+		// Define WL namespace.
+		var WL = WL ? WL : {};
+		/**
+		 * WLClient configuration variables.
+		 * Values are injected by the deployer that packs the gadget.
+		 */
+		WL.StaticAppProps = {
+   "APP_DISPLAY_NAME": "BuilderAdminApp",
+   "APP_ID": "BuilderAdminApp",
+   "APP_SERVICES_URL": "\/apps\/services\/",
+   "APP_VERSION": "1.0",
+   "ENVIRONMENT": "android",
+   "LOGIN_DISPLAY_TYPE": "embedded",
+   "WORKLIGHT_NATIVE_VERSION": "4186851560-2746434164",
+   "WORKLIGHT_PLATFORM_VERSION": "6.1.0.01.20140311-2356",
+   "WORKLIGHT_ROOT_URL": "\/apps\/services\/api\/BuilderAdminApp\/android\/"
+};</script>
+		<script src="worklight/cordova.js"></script>
+		<script src="worklight/wljq.js"></script>
+		<script src="worklight/worklight.js"></script>
+		<script src="worklight/checksum.js"></script>
+		<script src="worklight/jsonstore.js"></script>
+		<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
+    </head>
+    <body style="display: none;">
+        <div data-role="page" id="page">
+            <div data-role="content" style="padding: 15px">
+                <div id="AppBody" style="display: none;">
+				<!-- <div>
+					<h3>Welcome</h3> -->
+                    <a data-role="button" href="#" id="logout">Logout</a>
+				<!-- </div> -->
+                    <div id="contentAppBodyDiv" style="margin: 5%;">Welcome</div>
+                    <div>
+                        <table style="width: 100%;">
+                            <TBODY>
+                                <tr>
+                                    <th>Select City</th>
+                                </tr>
+                                <tr>
+                                    <td id="Bangalore" onClick="tableCellClick(this)" style="border: 1px solid red; border-radius: 10px; text-align: center; height: 50px;">Bangalore</td>
+                                </tr>
+                                <tr>
+                                    <td id="Chennai" onClick="tableCellClick(this)" style="border: 1px solid red; border-radius: 10px; text-align: center; height: 50px;">Chennai</td>
+                                </tr>
+                                <tr>
+                                    <td id="Hyderabad" onClick="tableCellClick(this)" style="border: 1px solid red; text-align: center; border-radius: 10px; height: 50px;">Hyderabad</td>
+                                </tr>
+                                <tr>
+                                    <td id="Mumbai" onClick="tableCellClick(this)" style="border: 1px solid red; text-align: center; height: 50px; border-radius: 10px;">Mumbai</td>
+                                </tr>
+                            </TBODY>
+                        </table>
+                    </div>
+                </div>
+                <div id="AuthBody">
+                    <div data-role="content" style="padding: 15px;">
+                        <h3 style="text-align: center;">Sign in</h3>
+                        <input id="email" placeholder="email"> <input id="password" placeholder="password"> <a data-role="button" id="submitLoginButton" onclick="submitLoginClick()">Submit</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="page" id="addPrjoectsPage">
+            <div data-role="header">
+                <a data-role="button" onclick="goBack()">Back</a>
+                <h3>Add Projects</h3>
+            </div>
+            <div data-role="content" style="padding: 15px">
+                <input id="projectNameId" placeholder="Enter Project Name" type="text"> <a data-role="button" onClick="chooseImageButtonClick()">Choose Image</a> <img alt="Smiley face" height="200px" id="ImgPlaceholder" style="" width="200px"> <a data-role="button" onClick="addProjectSubmitbuttonClick()">Submit</a>
+            </div>
+        </div>
+        <script src="js/pushNotification.js"></script>
+	<script src="js/addProject.js"></script>
+	<script src="js/jsonStore.js"></script>
+	<script src="js/authentication.js"></script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+    </body>
+</html>

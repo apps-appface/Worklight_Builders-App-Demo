@@ -1,0 +1,45 @@
+body{
+	width:100%;
+}
+
+
+body{
+ background:url('../images/realestate1.jpg') repeat center center fixed; 
+  -webkit-background-size: cover;
+  background-size: cover;
+}
+
+#contentAuthDiv{
+ background-color:lightGreen;
+  width : 70%;
+  bottom : 0;
+  position: fixed;
+  margin : 15%;
+  border : 3px solid purple;
+  border-radius : 50%;
+}
+
+#submitLoginButton{
+	width : 30%;
+	background-color : red;
+	left : 25%;
+	color : white;
+}
+
+#listViewDiv{
+	 position : absolute;    
+    width    : 80%;
+    left     : 40%;
+    top      : 50%;
+    margin-left : -100px; 
+    margin-top  : -100px; 
+}
+
+td{
+
+	  transition: box-shadow .2s ease-in-out;
+  transition-property: box-shadow;
+  transition-duration: 0.2s;
+  transition-timing-function: ease-in-out;
+  transition-delay: initial;
+}

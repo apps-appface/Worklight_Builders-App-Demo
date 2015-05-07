@@ -1,0 +1,21 @@
+#sendEmailButton
+{
+	font-family : cursive;
+	background-color: purple;
+	width:40%;
+	align:center;
+	border-radius : 5px;
+	text-shadow:none;
+	color:white;
+	margin:auto auto;
+}
+
+#referEmail
+{
+	color : black;
+	text-align : center;
+}
+table#selectProject{
+	background-color: purple;
+    width: 100%;
+}

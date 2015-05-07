@@ -1,0 +1,92 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>index</title>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+<link rel="shortcut icon" href="images/favicon.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+<link href="jqueryMobile/jquery.mobile-1.4.5.css" rel="stylesheet">
+<link href="css/loginPage.css" rel="stylesheet">
+<link href="css/projectsPage.css" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+<script>
+	window.$ = window.jQuery = WLJQ;
+</script>
+<script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
+</head>
+<body style="display: none;">
+	<div data-role="page" id="loginPage" style="background-color: transparent;">
+		<div id="AppBody" >
+			<div data-role="header" id="headerDiv">
+				<h3 style="font-family:Optima-Regular;">Welcome</h3>
+				<a  id="logoutButton" class="ui-btn-right"
+					onclick="WL.Client.logout('LoginRealm', {onSuccess:WL.Client.reloadApp})"><img src="images/logout.png" style="max-height:20px"/></a>
+			</div>
+			<div id="contentAppBodyDiv" style="align:center;color:purple; text-align:center; margin-top:10%; font-family: Optima-Regular">Welcome</div>
+			<div id="tableDiv" align="center" style="margin-top: 10%">
+			<table style="border:collapse; width:70%;" >
+			<tr style="height:50px;background-color: #71BC78; margin:7px;">
+			<td onClick="leaveApplicationClick()" style="box-shadow: 5px 5px 20px 5px green; font-family:Optima-Regular; border-radius:4px;color:#ffffff; text-align:center; width:80%; text-shadow: none;">Leave Application</td>
+			</tr>
+			<tr style="height:50px;background-color: #71BC78; margin:7px;">
+			<td onClick="paySlipsClick()" style="box-shadow: 5px 5px 20px 5px green;font-family:Optima-Regular;margin:5px; border-radius:4px;color:#ffffff; text-align:center; width:80%; text-shadow: none;">Pay Slips</td>
+			</tr>
+			<tr style="height:50px;background-color: #71BC78;margin:7px;">
+			<td onClick="referCustomerClick()" style="box-shadow: 5px 5px 20px 5px green; font-family:Optima-Regular;border-radius:4px;color:#ffffff; text-align:center; width:80%; text-shadow: none;">Refer Customer</td>
+			</tr>
+			</table>
+			</div>
+		</div>
+		<div id="AuthBody" style="display: none;">
+			<h3
+				style="font-family: cursive; font-size: 30px; color: purple; text-align: center; margin-top: 30%; text-shadow: 1px 1px 2px white;">V2
+				Constructions</h3>
+			<div id="contentAuthDiv" data-role="content" style="padding: 15px;">
+				<h3 style="text-align: center; font-family: 'Diplomata';">Sign
+					in</h3>
+				<input id="email" placeholder="email"
+					style="text-align: center; font-weight: 200; font-style: normal;" />
+				<input id="password" placeholder="password"
+					style="text-align: center; font-weight: 200; font-style: normal;" />
+				<a data-role="button" id="submitLoginButton"
+					onclick="submitLoginClick()">Submit</a>
+			</div>
+		</div>
+	</div>
+	<div data-role="page" id="projectsPage" style="background-color: transparent;">
+		<div data-role="header" id="headerDiv">
+		<a class="ui-btn" id="backLink" style="background:transparent;box-shadow: none !important; height:18px;"><img src="images/back.png" style="margin-top:-4px;height:25px;"/></a>
+			<h3 style="font-family:Optima-Regular;text-shadow: none;">Select Project</h3>
+		</div>
+		<div data-role="content" style="padding: 15px">
+			<div>
+				<h5 style="text-align: center; color: green;text-shadow: none;font-family: Optima-Regular;">Select City</h5>
+
+				<select id="selectCity" style="background-color: purple;font-family: Optima-Regular;">
+					<option value="Bangalore">Bangalore</option>
+					<option value="Hyderabad">Hyderabad</option>
+					<option value="Chennai">Chennai</option>
+					<option value="Mumbai">Mumbai</option>
+				</select>
+
+				<h5 style="text-align: center; color: green;font-family: Optima-Regular;text-shadow: none;">Select Project</h5>
+				<div id="projectsDiv">
+					<table id="selectProject" class="ui-responsive">
+					
+					</table>
+				</div>
+				<input type="text" id="referEmail"
+					placeholder="Enter Email To Refer" style="font-family: Optima-Regular;"/> <a class="ui-btn"
+					id="sendEmailButton" onClick="sendEmailClick()">Send Email</a>
+			</div>
+		</div>
+	</div>
+	<script src="js/pushNotification.js"></script>
+	<script src="js/authentication.js"></script>
+	<script src="js/initOptions.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/messages.js"></script>
+</body>
+</html>

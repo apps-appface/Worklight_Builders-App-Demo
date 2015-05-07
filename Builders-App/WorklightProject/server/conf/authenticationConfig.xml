@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+	 <staticResources>
+
+		<resource id="subscribeServlet" securityTest="SubscribeServlet">
+			<urlPatterns>/subscribeSMS*;/receiveSMS*</urlPatterns>
+		</resource>
+	</staticResources> 
+
+     
+	 <securityTests>
+    
+	
+
+		<customSecurityTest name="login_securityTest">
+			<test realm="LoginRealm" isInternalUserID="true" />
+		</customSecurityTest>
+		
+		<customSecurityTest name="adminLogin_securityTest">
+			<test realm="AdminLoginRealm" isInternalUserID="true" />
+		</customSecurityTest> 
+			
+ 		<mobileSecurityTest name="PushApplication-strong-mobile-securityTest">
+            <testUser realm="AdminLoginRealm"/>
+            <testDeviceId provisioningType="none"/>
+        </mobileSecurityTest>
+        
+        <mobileSecurityTest name="SMSRealm-mobile-securityTest">
+            <testUser realm="AdminLoginRealm"/>
+            <testDeviceId provisioningType="none"/>
+        </mobileSecurityTest>
+        
+	</securityTests> 
+	
+	<realms>
+		<realm name="SampleAppRealm" loginModule="StrongDummy">
+			<className>com.worklight.core.auth.ext.FormBasedAuthenticator</className>
+		</realm>
+		
+		<realm name="WorklightConsole" loginModule="requireLogin">
+			<className>com.worklight.core.auth.ext.FormBasedAuthenticator</className>
+			<onLoginUrl>/console</onLoginUrl>
+		</realm>
+		
+
+		
+		<realm name="LoginRealm" loginModule="LoginModule">
+			<className>com.worklight.integration.auth.AdapterAuthenticator</className>
+			<parameter name="login-function" value="UserAdapter.onAuthRequired"></parameter>
+			<parameter name="logout-function" value="UserAdapter.onLogout"></parameter>
+		</realm>
+		
+		<realm name="AdminLoginRealm" loginModule="AdminLoginModule">
+			<className>com.worklight.integration.auth.AdapterAuthenticator</className>
+			<parameter name="login-function" value="AdminUserAdapter.onAuthRequired"></parameter>
+			<parameter name="logout-function" value="AdminUserAdapter.onLogout"></parameter>
+		</realm>
+		
+
+	</realms>
+
+	<loginModules>
+		<loginModule name="StrongDummy">
+			<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		<loginModule name="requireLogin">
+			<className>com.worklight.core.auth.ext.SingleIdentityLoginModule</className>
+		</loginModule>
+
+
+		<loginModule name="LoginModule">
+		 	<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		<loginModule name="AdminLoginModule">
+		 	<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+
+
+	</loginModules>
+
+</tns:loginConfiguration>
