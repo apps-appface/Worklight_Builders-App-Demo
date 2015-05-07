@@ -1,0 +1,88 @@
+<!DOCTYPE HTML>
+<html>
+    	<head>
+    		<meta charset="UTF-8">
+    		<title>SalesDashboard</title>
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0">
+    		<!--
+    			<link rel="shortcut icon" href="images/favicon.png">
+    			<link rel="apple-touch-icon" href="images/apple-touch-icon.png"> 
+    		-->
+    		<link rel="stylesheet" href="css/main.css">
+    		<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    		<script>window.$ = window.jQuery = WLJQ;</script>
+    		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+    	</head>
+    	<body style="display: none;">
+    		<!--application UI goes here-->
+    		<div data-role="page"  id="loginpage">
+    		     <div data-role="header">
+		              <h1>Sales Dashboard</h1>
+	             </div><!-- /header -->
+	             <br><br>
+	             <div data-role="content">
+	                  <div id = "signin">
+		                   <p><i> Sign in to continue ... </i></p>
+		                   <p id = "errormessage">  </p>
+		                   <br><br>
+		                   <b>Email address:</b> <input type="text"  id="email"  name="Email" ><br>
+                           <b>Password:</b> <input type="password" id="password"  name="Password"><br>
+                           <input type="submit" onclick="submitLoginClick()" value="Submit"/>
+                           </div> <!--signin -->
+                      <div id = "home">
+                           <button type="button"  style="float: right" onclick="logout()">Logout</button>
+	                       <br><br><br><br>
+	                       <table id ="tableresult"  align="center" border="1" cellpadding=5 style="width:50%;height:70%" class="table" > 
+		                   </table>
+		                   <br><br><br><br>
+		              </div><!-- home -->     
+		               <div id = "projects">
+		               <button type="button"  style="float: right" onclick="logout()">Logout</button>
+	                       
+                       </div > <!-- projects -->
+                      
+		          </div><!-- content -->  
+		           <footer id ="footer"> <b>V2 Builders Private Limited</b> </footer>  
+	        </div><!-- /page -->
+	        <div data-role="page"  id="projects_page">
+    		     <div data-role="header">
+		              <h1>Sales Dashboard</h1>
+	             </div><!-- /header -->
+	             <br><br>
+	             <div data-role="content">
+	                   <div id = "projects1">
+	                        <div id = "project_image">
+	                        </div>
+	                        <div id = "project_details">
+	                        </div>
+	                        
+                       </div > <!-- projects1 -->
+                      <button id="cmd">generate PDF</button>           
+		          </div><!-- content -->    
+	            <footer id="footer"><b>V2 Builders Private Limited </b></footer> 
+	             
+		 
+	          
+	        </div><!-- /page -->
+	        
+	        
+	        
+	        
+	        <script src="js/initOptions.js"></script>
+            <script src="js/main.js"></script>
+            <script src="js/messages.js"></script> 
+            <script src="js/authentication.js"></script>
+            <script src="js/jspdf.js"></script>    
+            <script src="js/jspdf.plugin.from_html.js"></script>
+            <script src="js/jspdf.plugin.split_text_to_size.js"></script>
+            <script src="js/jspdf.plugin.standard_fonts_metrics.js"></script>
+            <script src="js/FileSaver.js"></script>
+            <script src="js/FileSaver.min.js"></script>
+            <script src="js/jspdf.plugin.addimage.js"></script>
+            
+            <script src="js/jspdf.min.js"></script>
+            <script src="js/jspdf.plugin.addimage.js"></script>
+                          
+            
+        </body>
+</html>
