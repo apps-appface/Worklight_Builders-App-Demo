@@ -15,64 +15,68 @@
 <script src="jqueryMobile/jquery.mobile-1.4.5.js"></script>
 </head>
 <body style="display: none;">
-	<div data-role="page" id="page">
-		<div data-role="content" style="padding: 15px">
+	<div data-role="page" id="page" style="background-color: transparent;" >
+		
 			<div id="AppBody" style="display: none;">
-				<!-- <div>
-					<h3>Welcome</h3> -->
-				<a data-role="button" href="#" id="logout">Logout</a>
-				<!-- </div> -->
+				<div data-role="header" id="headerDiv">
+				<h3 style="font-family:Optima-Regular;">V2 Constructions</h3>
+				<a  id="logoutButton" class="ui-btn-right"
+					onclick="WL.Client.logout('AdminLoginRealm', {onSuccess:WL.Client.reloadApp})"><img src="images/logout.png" style="max-height:20px"/></a>
+			    </div>
 				<div id="contentAppBodyDiv" style="margin: 5%;">Welcome</div>
-				<div>
-					<table style="width: 100%;">
-						<tr>
-							<th>Select City</th>
-						</tr>
+				<div id="tableDiv" align="center" style="margin-top: 10%" >
+				     <p>Select City</p>
+					<table style="border:collapse; width:70%;" >
+						
 						<tr>
 							<td id="Bangalore"
-								style="border: 1px solid red; border-radius: 10px; text-align: center; height: 50px;"
 								onClick="tableCellClick(this)">Bangalore</td>
 						</tr>
 						<tr>
 							<td id="Chennai"
-								style="border: 1px solid red; border-radius: 10px; text-align: center; height: 50px;"
 								onClick="tableCellClick(this)">Chennai</td>
 						</tr>
 						<tr>
 							<td id="Hyderabad"
-								style="border: 1px solid red; text-align: center; border-radius: 10px; height: 50px;"
 								onClick="tableCellClick(this)">Hyderabad</td>
 						</tr>
 						<tr>
 							<td id="Mumbai"
-								style="border: 1px solid red; text-align: center; height: 50px; border-radius: 10px;"
 								onClick="tableCellClick(this)">Mumbai</td>
 						</tr>
 					</table>
 				</div>
 			</div>
 			<div id="AuthBody">
-				<div data-role="content" style="padding: 15px;">
-				
-					<h3 style="text-align: center;">Sign in</h3>
-					<input id="email" placeholder="email" /> <input id="password"
-						placeholder="password" /> <a data-role="button"
+			     <h3
+				      style="font-family: cursive; font-size: 30px; color: purple; text-align: center; margin-top: 30%; text-shadow: 1px 1px 2px white;">V2
+				      Constructions</h3>
+				<div id="contentAuthDiv" data-role="content" style="padding: 15px;">
+			         <h3 style="text-align: center; font-family: 'Diplomata';">Sign
+					 in</h3>
+				     <input id="email" placeholder="email"
+					  style="text-align: center; font-weight: 200; font-style: normal;" />
+				     <input id="password" placeholder="password"
+					  style="text-align: center; font-weight: 200; font-style: normal;" />	
+					 <a data-role="button"
 						id="submitLoginButton" onclick="submitLoginClick()">Submit</a>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div data-role="page" id="addPrjoectsPage">
-		<div data-role="header">
-		<a data-role="button" onclick="goBack()">Back</a>
-			<h3>Add Projects</h3>
+
+	<div data-role="page" id="addPrjoectsPage" style="background-color: transparent;width:100%">
+		<div data-role="header" id="headerDiv1">
+		<a class="ui-btn" id="backLink" style="background:transparent;box-shadow: none !important; height:18px;"><img src="images/back.png" style="margin-top:-4px;height:25px;"/></a>
+		<h3 style="font-family:Optima-Regular;">V2 Constructions</h3>
+	<!--	<a data-role="button" onclick="goBack()">Back</a>-->
+			
 		</div>
 		<div data-role="content" style="padding: 15px">
-			<input type="text" id="projectNameId"
-				placeholder="Enter Project Name" /> <a data-role="button"
-				onClick="chooseImageButtonClick()">Choose Image</a> <img
-				id="ImgPlaceholder" alt="Smiley face" style="" height="200px"
-				width="200px"> <a data-role="button"
+		     <h5 style="text-align: center; color: green;text-shadow: none;font-family: Optima-Regular;">Add Project </h5>
+			 <input type="text" id="projectNameId" placeholder="Enter Project Name" style="font-family: Optima-Regular;"/> 
+			    <a data-role="button" onClick="chooseImageButtonClick()">Choose Image</a> 
+			    <img id="ImgPlaceholder"  style="" height=300px
+				width=100%> <a data-role="button" id=addProjectButton
 				onClick="addProjectSubmitbuttonClick()">Submit</a>
 		</div>
 	</div>

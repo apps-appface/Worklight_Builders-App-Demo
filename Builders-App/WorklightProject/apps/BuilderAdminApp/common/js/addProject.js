@@ -16,8 +16,13 @@ function tableCellClick(element)
 	$.mobile.navigate("#addPrjoectsPage");
 }
 
-function onPushSuccess(){alert("push Success");}
-function onPushFailure(){alert("push Failure");}
+function onPushSuccess() {
+	//alert("push Success");
+}
+
+function onPushFailure() { 
+	//alert("push Failure");
+}
 
 
 function chooseImageButtonClick()
@@ -63,13 +68,13 @@ function onFailureAddingNewProject(result)
 function onSuccess(imageData) {
 	var smallImage = document.getElementById('ImgPlaceholder'); 
 	smallImage.style.display = 'block';
-	smallImage.width = 200;
-	smallImage.height = 200;
+	smallImage.width = 330;
+	smallImage.height = 300;
 	smallImage.src = imageData;
 	smallImage.onload = function(){
 		var canvas = document.createElement("canvas");
 		var ctx = canvas.getContext("2d");
-		ctx.drawImage(this, 0, 0 , 250,250);
+		ctx.drawImage(this, 0, 0 , 330,300);
 		var dataURL = canvas.toDataURL("image/png",1.0);
 		imageBase64 = dataURL.replace(/^data:image\/(png|jpg);base64,/, "");
 	};	

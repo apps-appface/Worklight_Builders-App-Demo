@@ -74,7 +74,7 @@ function loggedOut()
 }
 function logoutSuccess()
 {
-	WL.Client.logout('AdminLoginRealm', {onSuccess:WL.Client.reloadApp});
+	//WL.Client.logout('AdminLoginRealm', {onSuccess:WL.Client.reloadApp});
 }
 
 function logoutfailure()
@@ -111,6 +111,11 @@ function onSubscribeSMSSuccess(response) {
 function onSubscribeSMSFailure(response) {
 	//alert("Failed to Subscribe to SMS");
 }
+
+$("#backLink").click(function(event) {
+    event.preventDefault();
+    history.back(1);
+});
 
 
 

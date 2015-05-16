@@ -37,7 +37,7 @@ body{
 
 td{
 
-	  transition: box-shadow .2s ease-in-out;
+  transition: box-shadow .2s ease-in-out;
   transition-property: box-shadow;
   transition-duration: 0.2s;
   transition-timing-function: ease-in-out;

@@ -27,12 +27,12 @@ function setLastLoginTime(id)
 
 function jsonStoresuccess(message)
 {
-	alert(message + "jsonstore initialized success");	
+	//alert(message + "jsonstore initialized success");	
 }
 
 function jsonStorefailure(message)
 {
-	alert(message + "jsonstore initialized failure");	
+	//alert(message + "jsonstore initialized failure");	
 }
 
 
