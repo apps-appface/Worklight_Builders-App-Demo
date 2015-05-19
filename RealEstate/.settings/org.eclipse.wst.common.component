@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="RealEstate">
+        <wb-resource deploy-path="/" source-path="/apps/SalesDashboard/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/SalesDashboard/desktopbrowser"/>
+        <wb-resource deploy-path="/" source-path="/apps/BuildersAdmin/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/BuildersAdmin/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/BuildersAdmin/iphone"/>
+        <wb-resource deploy-path="/" source-path="/apps/Employee/common"/>
+        <wb-resource deploy-path="/" source-path="/apps/Employee/android"/>
+        <wb-resource deploy-path="/" source-path="/apps/Employee/iphone"/>
+        <property name="context-root" value="RealEstate"/>
+    </wb-module>
+</project-modules>

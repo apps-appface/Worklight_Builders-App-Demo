@@ -1,0 +1,101 @@
+
+/* Stylesheet content from css/main.css in folder common */
+/* Reset CSS */
+a, abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, dialog, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+	margin: 0;
+	padding: 0;
+}
+
+/* Worklight container div */
+#headerDiv,#headerDiv1{
+	 background-color: #1DACD6; 
+}
+
+body,#addPrjoectsPage {
+	height: 460px;
+	margin: 0 auto;
+	width: 320px;
+	background:url('../images/realestate1.jpg') repeat center center fixed ; 
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+tr{
+	height:50px;
+	background-color: #71BC78;
+	margin:7px;"
+}
+
+td{
+   box-shadow: 5px 5px 20px 5px green;
+   font-family:Optima-Regular;
+   border-radius:4px;
+   color:#ffffff;
+   text-align:center;
+   width:80%;
+   text-shadow: none;	
+}
+
+#contentAuthDiv{
+ background-color:lightGreen;
+  width : 70%;
+  bottom : 0;
+  position: fixed;
+  margin : 15%;
+  border : 3px solid purple;
+  border-radius : 50%;
+}
+
+#submitLoginButton{
+	width : 30%;
+	background-color : red;
+	left : 25%;
+	color : white;
+}
+
+#logoutButton
+{
+	background-color: transparent;
+	height:16px;
+	width:50px;
+	border:none;
+	box-shadow: none !important;
+}
+
+#addProjectButton 
+{
+    font-family : cursive;
+	background-color: purple;
+	width:40%;
+	align:center;
+	border-radius : 5px;
+	text-shadow:none;
+	color:white;
+	margin:auto auto;	
+}
+
+#projectNameId{
+	color : black;
+	text-align : center;
+}
+
+/* Stylesheet content from css/main.css in folder iphone */
+/*	 Licensed Materials - Property of IBM
+	 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+	 US Government Users Restricted Rights - Use, duplication or
+     disclosure restricted by GSA ADP Schedule Contract with IBM Corp. */
+     
+/* this CSS file extends the application CSS file found under common\css */
+
+/*Optional iOS 7 status bar filler*/
+#wl_ios7bar{
+	background-color: white;
+	height: 15pt;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width:100%;
+}
+body.wl_ios7{
+	padding-top: 15pt;
+}

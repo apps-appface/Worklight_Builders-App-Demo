@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:loginConfiguration xmlns:tns="http://www.worklight.com/auth/config" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+
+		<!-- Licensed Materials - Property of IBM
+			 5725-I43 (C) Copyright IBM Corp. 2006, 2013. All Rights Reserved.
+			 US Government Users Restricted Rights - Use, duplication or
+             disclosure restricted by GSA ADP Schedule Contract with IBM Corp. -->	
+
+	 <staticResources>
+	 <!--  
+	   		<resource id="logUploadServlet" securityTest="LogUploadServlet">
+			<urlPatterns>/apps/services/loguploader*</urlPatterns>
+		</resource>
+		-->
+		<resource id="subscribeServlet" securityTest="SubscribeServlet">
+			<urlPatterns>/subscribeSMS*;/receiveSMS*;/ussd*</urlPatterns>
+		</resource>
+		
+	</staticResources> 
+
+   <!--  Sample security tests  
+         Even if not used there will be some default webSecurityTest and mobileSecurityTest 
+         
+		 Attention: If you are adding an app authenticity realm to a security test, 
+		 you must also update the application-descriptor.xml. Please refer to the user documentation 
+		 on application authenticity for environment specific guidelines. -->   
+         
+	 <securityTests>
+       	<!-- 
+		<mobileSecurityTest name="mobileTests">
+			<testAppAuthenticity/> 
+			<testDeviceId provisioningType="none" />
+			<testUser realm="myMobileLoginForm" />
+			<testDirectUpdate mode="perSession" />
+		</mobileSecurityTest>
+
+		<webSecurityTest name="webTests">
+			<testUser realm="myWebLoginForm"/>
+		</webSecurityTest>
+
+		<customSecurityTest name="customTests">
+        	<test realm="wl_antiXSRFRealm" step="1"/>
+        	<test realm="wl_authenticityRealm" step="1"/>
+        	<test realm="wl_remoteDisableRealm" step="1"/>
+        	<test realm="wl_directUpdateRealm" mode="perSession" step="1"/>
+            <test realm="wl_anonymousUserRealm" isInternalUserID="true" step="1"/>
+			<test realm="wl_deviceNoProvisioningRealm" isInternalDeviceID="true" step="2"/>
+       	</customSecurityTest>
+       	
+       	<customSecurityTest name="LogUploadServlet">
+            <test realm="wl_anonymousUserRealm" step="1"/>
+  	        <test realm="LogUploadServlet" isInternalUserID="true"/>
+       	</customSecurityTest>
+       	-->
+       	<customSecurityTest name="SubscribeServlet">
+       		<test realm="SubscribeServlet" isInternalUserID="true"/>
+       	</customSecurityTest> 
+       	<customSecurityTest name="login_securityTest">
+            <test realm="wl_directUpdateRealm" step="1"/>
+            <test isInternalUserID="true" realm="LoginRealm"/>
+        </customSecurityTest> 
+        <customSecurityTest name="adminLogin_securityTest">
+			<test realm="AdminLoginRealm" isInternalUserID="true" />
+		</customSecurityTest> 
+		<mobileSecurityTest name="PushApplication-strong-mobile-securityTest">
+            <testUser realm="AdminLoginRealm"/>
+            <testDeviceId provisioningType="none"/>
+        </mobileSecurityTest>
+         <mobileSecurityTest name="SMSRealm-mobile-securityTest">
+            <testUser realm="AdminLoginRealm"/>
+            <testDeviceId provisioningType="none"/>
+        </mobileSecurityTest>  		
+
+	</securityTests> 
+	
+	<realms>
+		<realm name="SampleAppRealm" loginModule="StrongDummy">
+			<className>com.worklight.core.auth.ext.FormBasedAuthenticator</className>
+		</realm>
+		
+		<realm name="SubscribeServlet" loginModule="rejectAll">
+			<className>com.worklight.core.auth.ext.HeaderAuthenticator</className>			
+		</realm>
+		
+		<realm  name="LoginRealm" loginModule="LoginModule">
+            <className>com.worklight.integration.auth.AdapterAuthenticator</className>
+            <parameter name="login-function" value="SQL.onAuthRequired"/>
+            <parameter name="logout-function" value="SQL.onLogout"/>
+        </realm>
+        <realm name="AdminLoginRealm" loginModule="AdminLoginModule">
+			<className>com.worklight.integration.auth.AdapterAuthenticator</className>
+			<parameter name="login-function" value="AdminUserAdapter.onAuthRequired"></parameter>
+			<parameter name="logout-function" value="AdminUserAdapter.onLogout"></parameter>
+		</realm>
+		
+		
+    	
+	</realms>
+
+	<loginModules>
+		<loginModule name="StrongDummy" expirationInSeconds="-1">
+			<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		<loginModule name="requireLogin" expirationInSeconds="-1">
+			<className>com.worklight.core.auth.ext.SingleIdentityLoginModule</className>
+		</loginModule>
+		
+		<loginModule name="rejectAll">
+			<className>com.worklight.core.auth.ext.RejectingLoginModule</className>
+		</loginModule>
+		
+		<loginModule name="LoginModule">
+            <className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+        </loginModule>
+        <loginModule name="AdminLoginModule">
+		 	<className>com.worklight.core.auth.ext.NonValidatingLoginModule</className>
+		</loginModule>
+		
+		
+	</loginModules>
+
+</tns:loginConfiguration>
